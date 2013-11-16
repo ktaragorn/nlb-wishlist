@@ -18,6 +18,8 @@ require_directory([
   'routes'
 ])
 
+DataMapper.finalize
+
 get '/?' do
   erb "Hello world!"
 end

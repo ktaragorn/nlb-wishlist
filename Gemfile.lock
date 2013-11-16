@@ -1,14 +1,119 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.0.1)
+      i18n (~> 0.6, >= 0.6.4)
+      minitest (~> 4.2)
+      multi_json (~> 1.3)
+      thread_safe (~> 0.1)
+      tzinfo (~> 0.3.37)
+    addressable (2.3.5)
+    atomic (1.1.14)
     backports (3.3.5)
+    bcrypt-ruby (3.1.2)
+    blockenspiel (0.4.5)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    capistrano-helpers (0.8.1)
+      capistrano (~> 2.0)
+      git
+      versionomy
+    capistrano-shared-helpers (1.0.0)
+    capistrano-ssh-helpers (1.0.0)
+      capistrano
+    capistrano-templates (1.0.0)
+      capistrano
+      capistrano-helpers
+      capistrano-shared-helpers
+      capistrano-ssh-helpers
+      capistrano_colors
+      captify
+      rvm-capistrano
+    capistrano_colors (0.5.5)
+    captify (1.0.2)
+      capistrano
+    chassis-datamapper (1.0.1)
+      sinatra-chassis (>= 1.1.0)
+    chronic (0.10.2)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    columnize (0.3.6)
+    data_mapper (1.2.0)
+      dm-aggregates (~> 1.2.0)
+      dm-constraints (~> 1.2.0)
+      dm-core (~> 1.2.0)
+      dm-migrations (~> 1.2.0)
+      dm-serializer (~> 1.2.0)
+      dm-timestamps (~> 1.2.0)
+      dm-transactions (~> 1.2.0)
+      dm-types (~> 1.2.0)
+      dm-validations (~> 1.2.0)
+    data_objects (0.10.13)
+      addressable (~> 2.1)
+    debugger (1.6.2)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
+    dm-aggregates (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-constraints (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-core (1.2.1)
+      addressable (~> 2.3)
+    dm-do-adapter (1.2.0)
+      data_objects (~> 0.10.6)
+      dm-core (~> 1.2.0)
+    dm-migrations (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-serializer (1.2.2)
+      dm-core (~> 1.2.0)
+      fastercsv (~> 1.5)
+      json (~> 1.6)
+      json_pure (~> 1.6)
+      multi_json (~> 1.0)
+    dm-sqlite-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_sqlite3 (~> 0.10.6)
+    dm-timestamps (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-transactions (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-types (1.2.2)
+      bcrypt-ruby (~> 3.0)
+      dm-core (~> 1.2.0)
+      fastercsv (~> 1.5)
+      json (~> 1.6)
+      multi_json (~> 1.0)
+      stringex (~> 1.4)
+      uuidtools (~> 2.1)
+    dm-validations (1.2.0)
+      dm-core (~> 1.2.0)
+    do_sqlite3 (0.10.13)
+      data_objects (= 0.10.13)
     execjs (2.0.2)
-    jsmin (1.0.1)
+    fastercsv (1.5.5)
+    git (1.2.6)
+    highline (1.6.20)
+    i18n (0.6.5)
+    json (1.8.1)
+    json_pure (1.8.1)
+    minitest (4.7.5)
     multi_json (1.8.2)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     paint (0.8.6)
     rack (1.5.2)
     rack-flash3 (1.0.5)
@@ -17,6 +122,8 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sass (3.2.12)
     sinatra (1.4.4)
       rack (~> 1.4)
@@ -36,15 +143,29 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
+    stringex (1.5.1)
+    thread_safe (0.1.3)
+      atomic
     tilt (1.4.1)
+    tzinfo (0.3.38)
+    uuidtools (2.1.4)
+    versionomy (0.4.4)
+      blockenspiel (>= 0.4.5)
+    whenever (0.8.4)
+      activesupport (>= 2.3.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-script (>= 2.2.0)
-  jsmin (>= 1.0.1)
-  sass (>= 3.2.9)
+  capistrano
+  capistrano-templates
+  chassis-datamapper
+  data_mapper (~> 1.2.0)
+  debugger
+  dm-sqlite-adapter (~> 1.2.0)
   sinatra (>= 1.4.3)
   sinatra-chassis (>= 1.1.1)
   sinatra-contrib (>= 1.4.0)
+  whenever
