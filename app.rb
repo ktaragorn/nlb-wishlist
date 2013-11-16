@@ -8,7 +8,7 @@ require 'sinatra/reloader' if development?
 set :session_secret, 'secret123'
 
 require_directory([
-  'config',
+#  'config',
   'settings',
   'modules',
   'helpers',
