@@ -159,7 +159,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano
+  capistrano (~> 2.15)
   capistrano-templates
   chassis-datamapper
   data_mapper (~> 1.2.0)

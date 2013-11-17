@@ -11,9 +11,9 @@ gem 'chassis-datamapper'
 
  group :development do
   gem "debugger"
-  gem "capistrano"
-  gem "whenever"
-  gem "capistrano-templates"
+  gem "capistrano", '~> 2.15', :require => false
+  gem "whenever", :require => false
+  gem "capistrano-templates", :require => false
 end
 gem 'data_mapper', '~> 1.2.0'
 gem 'dm-sqlite-adapter', '~> 1.2.0'

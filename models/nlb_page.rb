@@ -1,7 +1,7 @@
 # Retrieves the page requested as a ruby object
 # Caches the page on disk to prevent multiple network accesses
 class NlbPage
-  PAGE_STORE_PATH = "tmp/pages/"
+  PAGE_STORE_PATH = "tmp/pages"
   class <<self
     def get(book_url)
       # check cache
@@ -9,6 +9,8 @@ class NlbPage
         # download page
         system ("curl #{book_url} > #{file_name book_url}")
       end
+
+      # todo check validity
 
       # create object
       File.open(file_name book_url) {|f| new f}
@@ -27,8 +29,6 @@ class NlbPage
 
   def initialize(file)
     # parse details
-    @a = 1
-    @b = 2
   end
 
 
