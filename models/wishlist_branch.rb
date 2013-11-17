@@ -7,5 +7,5 @@ class Wishlist_branch
 
   belongs_to :branch
   belongs_to :wishlist
-  belongs_to :book, through: :wishlist
+  has 1, :book, through: :wishlist
 end
